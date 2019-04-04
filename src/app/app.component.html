@@ -1,7 +1,15 @@
-<!--The content below is only a placeholder and can be replaced.-->
-Our count is currently: {{ count$ | async }}
-<hr />
-<button (click)="increment()">Increment</button>
-<hr />
-<button (click)="get()">Get count</button>
-<router-outlet></router-outlet>
+<div class="container">
+  <h1>Count demo</h1>
+  <app-alert
+    *ngIf="(error$ | async)"
+    title="Something went wrong.."
+    content="Something went wrong with the server. Please try again."
+  ></app-alert>
+  <app-spinner *ngIf="(isActive$ | async)"></app-spinner>
+  Our count is currently: {{ count$ | async }}
+  <hr />
+  <button (click)="increment()">Increment</button>
+  <hr />
+  <button (click)="get()">Get count</button>
+  <router-outlet></router-outlet>
+</div>

@@ -8,9 +8,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { appStateReducer, IAppState } from './store';
 import { CountEffects } from './store/count/count.effects';
+import { AlertComponent } from './alert/alert.component';
+import { SpinnerComponent } from './spinner/spinner.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, AlertComponent, SpinnerComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
