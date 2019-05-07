@@ -14,7 +14,7 @@ export class CountEffects {
   /** Gets count from our API */
   @Effect()
   public getCount$: Observable<Action> = this.actions$.pipe(
-    ofType(CountActions.GET),
+    ofType<CountActions.Get>(CountActions.GET),
     switchMap(action =>
       this.countService.get().pipe(
         map(count => new CountActions.GetComplete(count)),
